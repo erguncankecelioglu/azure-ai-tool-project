@@ -1,0 +1,20 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: jdbc:sqlserver://bau-project.database.windows.net:1433;database=bau-project2
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+
+azure:
+  textanalytics:
+    key: ${TEXTANALYTICS_KEY}
+    endpoint: ${TEXTANALYTICS_ENDPOINT}
